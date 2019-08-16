@@ -1,11 +1,17 @@
 ﻿#SingleInstance force
 #InstallKeybdHook
 
-; For use on Ducky
+; =======================
+; For use on Ducky Zero. This tidies up and overloads the top four media buttons
+; =======================
+
+; Stop the Calculator key loading the calculator (it's annoying). Turn it into a Play/Pause button instead
 Launch_App2::
 send {Media_Play_Pause}
 return
 
+
+; Control + Vol down / Vol up  == Previous track / Next track
 ^Volume_down::
 send {Media_Previous}
 return
@@ -16,11 +22,14 @@ return
 
 
 
-# Both control keys + x == multiplication sign
+; =======================
+; Use LControl + RControl + some key to insert useful characters
+; =======================
+
+; Both control keys + x == multiplication sign
 <^>^x::
 send ×
 return
-
 
 
 ; To be able to write Łs, in order to address your colleague from Poland correctly.
@@ -29,7 +38,9 @@ send Ł
 return
 
 
-
+; =======================
+; App-specific 
+; =======================
 
 
 ; Add the ability to insert non-breaking spaces in Notepad++ (in the same way that MSWord does it)
@@ -40,7 +51,9 @@ return
   }
 return
 
-
+; =======================
+; Copy Paste magic
+; =======================
 
 
 ; Ctrl+Windows+X and Ctrl+Windows+C cuts/copies straight to plain text.
@@ -60,13 +73,6 @@ Return
 
 
 
-
-
-
-
-
-
-
 ; Paste new line below current line (cursor can be anywhere on the line above)
 ^NumpadEnter::
 send {End}
@@ -77,9 +83,9 @@ return
 
 
 
-
+; =======================
 ; Make use of the keys under the Return key to have Closer Arrow Keys, to save those valuable milliseconds moving from the home row to the arrow buttons
-; =================
+; =======================
 LShift & RShift::
 send {Up}
 return
@@ -96,7 +102,7 @@ LShift & AppsKey::
 send {Down}
 return
 
-; =======================
+
 
 
 
