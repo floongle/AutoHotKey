@@ -16,16 +16,23 @@ return
 
 
 
+# Both control keys + x == multiplication sign
 <^>^x::
 send ×
 return
 
 
+
+; To be able to write Łs, in order to address your colleague from Poland correctly.
 <^>^l::
 send Ł
 return
 
 
+
+
+
+; Add the ability to insert non-breaking spaces in Notepad++ (in the same way that MSWord does it)
 ^Space::
   if WinActive("ahk_class Notepad++") {
   
@@ -60,7 +67,7 @@ Return
 
 
 
-; Paste new line below current line
+; Paste new line below current line (cursor can be anywhere on the line above)
 ^NumpadEnter::
 send {End}
 send {Enter}
@@ -71,7 +78,7 @@ return
 
 
 
-; Closer Arrow Keys
+; Make use of the keys under the Return key to have Closer Arrow Keys, to save those valuable milliseconds moving from the home row to the arrow buttons
 ; =================
 LShift & RShift::
 send {Up}
@@ -91,6 +98,12 @@ return
 
 ; =======================
 
+
+
+
+; =======================
+; This final section to the end will only work with Delvin RapidAccess keyboards. If you aren't using one, ignore this section
+; =======================
 
 ~LControl::return
 
