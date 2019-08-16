@@ -36,6 +36,29 @@ return
 
 
 
+; Ctrl+Windows+X and Ctrl+Windows+C cuts/copies straight to plain text.
+^#x::
+^#c::                            ; Text-only cut/copy to ClipBoard
+   Clip0 = %ClipBoardAll%
+   ClipBoard =
+   StringRight x,A_ThisHotKey,1  ; C or X
+   Send ^%x%                     ; For best compatibility: SendPlay
+   ClipWait 2                    ; Wait for text, up to 2s
+   If ErrorLevel
+      ClipBoard = %Clip0%        ; Restore original ClipBoard
+   Else
+      ClipBoard = %ClipBoard%    ; Convert to text
+   VarSetCapacity(Clip0, 0)      ; Free memory 
+Return
+
+
+
+
+
+
+
+
+
 
 ; Paste new line below current line
 ^NumpadEnter::
