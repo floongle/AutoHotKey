@@ -1,9 +1,16 @@
-﻿#SingleInstance force
-#InstallKeybdHook
+﻿#SingleInstance force ; We only want this running once at any given time!
+#InstallKeybdHook  ; Useful for debugging. Remove this if you're not debugging this file.
 
 ; =======================
 ; For use on Ducky Zero. This tidies up and overloads the top four media buttons
 ; =======================
+;
+;       ┌─────┐    ┌─────┐    ┌─────┐    ┌─────┐
+;       │ Mute│    │V dwn│    │V up │    │ Calc│
+;       └─────┘    └─────┘    └─────┘    └─────┘
+; +Ctl:          PrevTrack  NextTrack  PausePlay
+
+
 
 ; Stop the Calculator key loading the calculator (it's annoying). Turn it into a Play/Pause button instead
 Launch_App2::
@@ -111,6 +118,13 @@ return
 ; This final section to the end will only work with Delvin RapidAccess keyboards. If you aren't using one, ignore this section
 ; =======================
 
+
+;
+; These keyboards have two rows of macro keys above the Function row.
+; They signal the keypress by sending LControl, then RControl, then a three digit code, very quickly
+;
+
+
 ~LControl::return
 
 ~RControl::
@@ -176,6 +190,11 @@ input, var, L3
     SoundSet, -5
   }
 
+
+;
+; This is used to set categories in outlook calendar items. You need to configure the keyboard shortcuts in Outlook for these categories.
+;
+
   if WinActive("ahk_exe OUTLOOK.EXE") {
     if (var = 019)  {
       Send ^{F11}  ; turn off "TODO" flag
@@ -194,6 +213,9 @@ input, var, L3
   }
   
 
+;
+; This was a trial macro that is occasionally useful. It copies the colour of the pixel under the mouse pointer to the clipboard.
+;
   if (var = 001)  {
     MouseGetPos, MouseX, MouseY
     PixelGetColor, color, %MouseX%, %MouseY%
