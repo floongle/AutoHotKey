@@ -38,6 +38,24 @@ return
 send ×
 return
 
+; Both control keys + 0 == degree sign
+<^>^0::
+send {U+00B0} ; Degree sign
+return
+
+
+; Both control keys + t == (tm) sign
+<^>^t::
+send {U+2122} ; Degree sign
+return
+
+; Both control keys + t == almost-equal sign
+<^>^=::
+send {U+2248} ; almost equals sign
+return
+
+
+
 
 ; To be able to write Łs, in order to address your colleague from Poland correctly.
 <^>^l::
@@ -50,9 +68,9 @@ return
 ; =======================
 
 
-; Add the ability to insert non-breaking spaces in Notepad++ (in the same way that MSWord does it)
+; Add the ability to insert non-breaking spaces in Notepad++ or Draw.io (in the same way that MSWord does it)
 ^Space::
-  if WinActive("ahk_class Notepad++") {
+  if WinActive("ahk_class Notepad++") || WinActive("ahk_exe draw.io.exe") {
   
   Send {U+00A0} ; non-breaking space
   }
