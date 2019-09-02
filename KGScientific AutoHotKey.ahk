@@ -56,7 +56,6 @@ return
 
 
 
-
 ; To be able to write Łs, in order to address your colleague from Poland correctly.
 <^>^l::
 send Ł
@@ -223,6 +222,15 @@ input, var, L3
   if (var = 015)  {
      SoundSet, +5
   }
+
+  if (var = 016)  {
+    SplashImage,  C:\Dell\NoTouchy.png , B
+    Sleep,  900
+    SplashImage, Off
+  }
+
+
+
 
   if WinActive("ahk_exe OUTLOOK.EXE") {
       if (var = 039)  {
