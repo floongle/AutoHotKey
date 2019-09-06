@@ -54,6 +54,11 @@ return
 send {U+2248} ; almost equals sign
 return
 
+; Both control keys + d == delta (Δ) sign
+<^>^d::
+send Δ
+return
+
 
 
 ; To be able to write Łs, in order to address your colleague from Poland correctly.
@@ -225,7 +230,7 @@ input, var, L3
 
   if (var = 016)  {
     SplashImage,  C:\Dell\NoTouchy.png , B
-    Sleep,  900
+    Sleep,  1500
     SplashImage, Off
   }
 
