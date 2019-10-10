@@ -49,10 +49,12 @@ return
 send {U+2122} ; Degree sign
 return
 
+
 ; Both control keys + t == almost-equal sign
 <^>^=::
 send {U+2248} ; almost equals sign
 return
+
 
 ; Both control keys + d == delta (Δ) sign
 <^>^d::
@@ -60,11 +62,15 @@ send Δ
 return
 
 
-
 ; To be able to write Łs, in order to address your colleague from Poland correctly.
-<^>^l::
+<^>^+l::
 send Ł
 return
+
+<^>^l::
+send ł
+return
+
 
 
 ; =======================
@@ -73,7 +79,7 @@ return
 
 
 ; Add the ability to insert non-breaking spaces in Notepad++ or Draw.io (in the same way that MSWord does it)
-^Space::
+~^+Space::
   if WinActive("ahk_class Notepad++") || WinActive("ahk_exe draw.io.exe") {
   
   Send {U+00A0} ; non-breaking space
@@ -130,9 +136,6 @@ return
 LShift & AppsKey::
 send {Down}
 return
-
-
-
 
 
 
