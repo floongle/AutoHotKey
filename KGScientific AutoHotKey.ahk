@@ -61,6 +61,17 @@ return
 send Δ
 return
 
+; Both control keys + b == bullet (•) 
+<^>^b::
+send •
+return
+
+; Both control keys + B == large bullet (●) 
+<^>^+b::
+send ●
+return
+
+
 
 ; To be able to write Łs, in order to address your colleague from Poland correctly.
 <^>^+l::
