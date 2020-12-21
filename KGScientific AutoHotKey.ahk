@@ -50,7 +50,7 @@ send {U+2122} ; Degree sign
 return
 
 
-; Both control keys + t == almost-equal sign
+; Both control keys + = == almost-equal sign
 <^>^=::
 send {U+2248} ; almost equals sign
 return
