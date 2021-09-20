@@ -96,7 +96,7 @@ return
 
 ; Add the ability to insert non-breaking spaces in Notepad++ or Draw.io (in the same way that MSWord does it)
 ~^+Space::
-  if WinActive("ahk_class Notepad++") || WinActive("ahk_exe draw.io.exe") {
+  if WinActive("ahk_class Notepad++") || WinActive("ahk_exe draw.io.exe") ||WinActive("ahk_exe chrome.exe") {
   
   Send {U+00A0} ; non-breaking space
   }
